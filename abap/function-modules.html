@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Function Modules | Learn SAP</title>
+    <meta name="description" content="Learn SAP">
+    
+    
+    <link rel="preload" href="/assets/css/styles.4bbe215e.css" as="style"><link rel="preload" href="/assets/js/app.4bbe215e.js" as="script"><link rel="preload" href="/assets/js/6.a0ca951d.js" as="script"><link rel="prefetch" href="/assets/js/5.6d63010c.js"><link rel="prefetch" href="/assets/css/1.styles.c85243b6.css"><link rel="prefetch" href="/assets/js/1.c85243b6.js"><link rel="prefetch" href="/assets/css/2.styles.88bab351.css"><link rel="prefetch" href="/assets/js/2.88bab351.js"><link rel="prefetch" href="/assets/js/3.82315062.js"><link rel="prefetch" href="/assets/js/4.1ac448d1.js"><link rel="prefetch" href="/assets/js/7.e8a4e150.js"><link rel="prefetch" href="/assets/js/8.caf275ff.js"><link rel="prefetch" href="/assets/js/9.6fc78dd1.js"><link rel="prefetch" href="/assets/js/10.e8fdd03f.js"><link rel="prefetch" href="/assets/js/11.a22fa83b.js"><link rel="prefetch" href="/assets/js/12.34d41279.js"><link rel="prefetch" href="/assets/js/13.91a0b3cf.js"><link rel="prefetch" href="/assets/js/14.31a78843.js"><link rel="prefetch" href="/assets/js/15.f52cae08.js">
+    <link rel="stylesheet" href="/assets/css/styles.4bbe215e.css"><link rel="stylesheet" href="/assets/css/1.styles.c85243b6.css"><link rel="stylesheet" href="/assets/css/2.styles.88bab351.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Learn SAP</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/abap/" class="nav-link router-link-active">ABAP</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/abap/" class="nav-link router-link-active">ABAP</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Core ABAP</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/abap/function-modules.html" class="active sidebar-link">Function Modules</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/abap/function-modules.html#general" class="sidebar-link">General</a></li><li class="sidebar-sub-header"><a href="/abap/function-modules.html#data-dictionary" class="sidebar-link">Data Dictionary</a></li><li class="sidebar-sub-header"><a href="/abap/function-modules.html#module-pool" class="sidebar-link">Module Pool</a></li></ul></li><li><a href="/abap/standard-text.html" class="sidebar-link">Standard Text</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>ABAP HR</span> <span class="arrow right"></span></p> <!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>Webdynpro ABAP</span> <span class="arrow right"></span></p> <!----></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="function-modules"><a href="#function-modules" aria-hidden="true" class="header-anchor">#</a> Function Modules</h1> <p></p><div class="table-of-contents"><ul><li><a href="#general">General</a><ul><li><a href="#move-negative-sign-to-the-front">Move negative sign to the front</a></li></ul></li><li><a href="#data-dictionary">Data Dictionary</a><ul><li><a href="#fetching-fixed-values-from-domain">Fetching Fixed Values from Domain</a></li></ul></li><li><a href="#module-pool">Module Pool</a><ul><li><a href="#set-values-to-a-dropdown-listbox">Set values to a Dropdown/Listbox</a></li></ul></li></ul></div><p></p> <h2 id="general"><a href="#general" aria-hidden="true" class="header-anchor">#</a> General</h2> <h3 id="move-negative-sign-to-the-front"><a href="#move-negative-sign-to-the-front" aria-hidden="true" class="header-anchor">#</a> Move negative sign to the front</h3> <p>SAP by default shows negative number with minus at the end like <code>30-</code>. To change
+it to <code>-30</code> we need to use <code>CLOI_PUT_SIGN_IN_FRONT</code>. <code>VALUE</code> should be of
+character type</p> <div class="language-abap extra-class"><pre class="language-abap"><code><span class="token keyword">CALL</span> <span class="token keyword">FUNCTION</span> <span class="token string">'CLOI_PUT_SIGN_IN_FRONT'</span>
+    <span class="token keyword">CHANGING</span>
+        <span class="token keyword">VALUE</span>         <span class="token operator">=</span> lv_number<span class="token punctuation">.</span>
+</code></pre></div><h2 id="data-dictionary"><a href="#data-dictionary" aria-hidden="true" class="header-anchor">#</a> Data Dictionary</h2> <h3 id="fetching-fixed-values-from-domain"><a href="#fetching-fixed-values-from-domain" aria-hidden="true" class="header-anchor">#</a> Fetching Fixed Values from Domain</h3> <p>Fetch the Fixed Values or Ranges maintained in a domain with <code>DD_DOMA_GET</code>
+into tables of type <code>DD07V</code>.</p> <div class="language-abap extra-class"><pre class="language-abap"><code>    <span class="token keyword">DATA</span><span class="token punctuation">:</span>
+        lt_dd01v_tab_a <span class="token keyword">TYPE</span> <span class="token keyword">STANDARD</span> <span class="token keyword">TABLE</span> <span class="token keyword">OF</span> dd07v<span class="token punctuation">,</span>
+        lt_dd01v_tab_n <span class="token keyword">TYPE</span> <span class="token keyword">STANDARD</span> <span class="token keyword">TABLE</span> <span class="token keyword">OF</span> dd07v<span class="token punctuation">.</span>
+
+    <span class="token keyword">CALL</span> <span class="token keyword">FUNCTION</span> <span class="token string">'DD_DOMA_GET'</span>
+        <span class="token keyword">EXPORTING</span>
+            domain_name         <span class="token operator">=</span> <span class="token string">'GESCH'</span>
+<span class="token comment">*           GET_STATE           = 'M  '</span>
+            langu               <span class="token operator">=</span> sy<span class="token token-operator punctuation">-</span>langu
+<span class="token comment">*           PRID                = 0</span>
+            withtext            <span class="token operator">=</span> <span class="token string">'X'</span>
+<span class="token comment">*       IMPORTING</span>
+<span class="token comment">*           DD01V_WA_A          =</span>
+<span class="token comment">*           DD01V_WA_N          =</span>
+<span class="token comment">*           GOT_STATE           =</span>
+        <span class="token keyword">TABLES</span>
+            dd07v_tab_a         <span class="token operator">=</span> lt_dd01v_tab_a
+            dd07v_tab_n         <span class="token operator">=</span> lt_dd01v_tab_n
+        <span class="token keyword">EXCEPTIONS</span>
+            illegal_value       <span class="token operator">=</span> <span class="token number">1</span>
+            op_failure          <span class="token operator">=</span> <span class="token number">2</span>
+            <span class="token keyword">OTHERS</span>              <span class="token operator">=</span> <span class="token number">3</span><span class="token punctuation">.</span>
+</code></pre></div><h2 id="module-pool"><a href="#module-pool" aria-hidden="true" class="header-anchor">#</a> Module Pool</h2> <h3 id="set-values-to-a-dropdown-listbox"><a href="#set-values-to-a-dropdown-listbox" aria-hidden="true" class="header-anchor">#</a> Set values to a Dropdown/Listbox</h3> <p>To set values to a Dropdown/Listbox for a Module Pool field or Selection
+Screen field use <code>VRM_SET_VALUES</code>.</p> <div class="language-abap extra-class"><pre class="language-abap"><code><span class="token keyword">DATA</span><span class="token punctuation">(</span>lt_type<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token keyword">VALUE</span> vrm_values<span class="token punctuation">(</span>
+    <span class="token punctuation">(</span> <span class="token keyword">key</span> <span class="token operator">=</span> <span class="token string">'TYPE1'</span> <span class="token keyword">text</span> <span class="token operator">=</span> <span class="token string">'Type 1'</span> <span class="token punctuation">)</span>
+    <span class="token punctuation">(</span> <span class="token keyword">key</span> <span class="token operator">=</span> <span class="token string">'TYPE2'</span> <span class="token keyword">text</span> <span class="token operator">=</span> <span class="token string">'Type 2'</span> <span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">.</span>
+
+<span class="token keyword">CALL</span> <span class="token keyword">FUNCTION</span> <span class="token string">'VRM_SET_VALUES'</span>
+    <span class="token keyword">EXPORTING</span>
+      <span class="token keyword">id</span>     <span class="token operator">=</span> <span class="token string">'S_ACT-TYPE'</span>
+      <span class="token keyword">values</span> <span class="token operator">=</span> lt_type
+    <span class="token keyword">EXCEPTIONS</span>
+      ID_ILLEGAL_NAME       <span class="token operator">=</span> <span class="token number">1</span>
+      <span class="token keyword">OTHERS</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">.</span>
+</code></pre></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/abap/standard-text.html">
+          Standard Text
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/6.a0ca951d.js" defer></script><script src="/assets/js/app.4bbe215e.js" defer></script>
+  </body>
+</html>
